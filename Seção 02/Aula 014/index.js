@@ -1,74 +1,41 @@
-// Criando variável nome
-let nome = 'João';
+// Não podemos criar constantes com palavras reservadas
+// Constantes precisam ter nomes significativos
+// Não pode começar o nome de uma constante com um número
+// Não podem conter espaços ou traços
+// Utilizamos camelCase
+// Case-sensitive
+// Não pode modificar o valor de uma constante
+// A constante precisa ser criada e inicializada
 
-// Chamando variável nome
-console.log(nome, 'Nasceu em 1984'); // João Nasceu em 1984
-console.log('Em 2000', nome, 'conheceu Maria'); // Em 2000 João conheceu Maria
-console.log(nome, 'casou-se com Maria em 2012'); // joão casou-se com Maria em 2012
-console.log('Maria teve 1 filho com', nome ,'em 2015');
-																						// 'Maria teve 1 filho com João em 2015
-console.log('o filho de', nome, 'se chama Eduardo');
-                                            // o filho de João se chama Eduardo
+// Declarando uma constante
+const nome = 'João';
+console.log(nome);
 
-// =====================================================================================
-                                        
-// declarando variável
-let nome;
+// Uma constante não pode ter se valor modificado
+const nome = 'jhonnata';
+nome       = 'dev'; // gera um erro
 
-console.log(nome); // undefined
+// É possivel pegar o valor de uma variável ou uma constante
+// e atribuir a outra variável ou outra constante
+const primeiroNumero = 5;
+const segundoNumero  = 10;
 
-nome = 'Qualquer valor';
+const resultado = primeiroNumero * segundoNumero; // 50
 
-console.log(nome); // Qualquer valor
+const reultadoDuplicado = resultado * 2;
+console.log(resultadoDuplicado); // 100
 
-nome = 'João';
+let resultadoTriplicado = resultado * 3;
+console.log(resultadoTriplicado); // 150
 
-console.log(nome); // João
+resultadoTriplicado = resultadoTriplicado + 5;
+console.log(resultadoTriplicado); // 155
 
-// =====================================================================================
+// String = Text | Number = Número
+const primeiroNumero = '5';
+const segundoNumero  = 10;
 
-// EXEMPLOS
+console.log(typeof(primeiroNumero)); // string
+console.log(typeof(segundoNumero)); // number
 
-let if;
-let console;
-
-// =====================================================================================
-
-// Exemplo não recomendado
-let n;
-let nc;
-let c;
-
-// Exemplo recomendado
-let nomeCliente = 'João';
-
-// Não pode COMEÇAR o nome de uma variável com um número, no meio ou no
-// final do nome é permitido
-let 1nome; // gera um erro
-
-// Não pode usar espaços ou traços
-let nome-cliente;
-
-let nome cliente;
-
-// para isso é recomendado o uso do camelCase
-let nomeCompleto = 'Jhonnata';
-
-// variaveis no JavaScrpit são Case-Sensitive
-// no caso, letras maiúsculsa e minúsculas fazem diferença
-let nomeCliente = 'Jhonnata';
-let nomecliente = 'dev';
-
-console.log(nomeCliente); // Jhonnata
-console.log(nomecliente); // dev
-
-// não pode redleclarar variáveis com let
-let nomeCliente = 'Jhonnata';
-let nomeCliente = 'dev';
-
-// no lugar de redlecarar a variável, altere o valor dentro dela dessa maneira
-let nomeCliente = 'Jhonnata';
-console.log(nomeCliente); // Jhonnata
-
-nomeCliente     = 'dev';
-console.log(nomeCliente); // dev
+console.log(primeiroNumero + segundoNumero) // 510
