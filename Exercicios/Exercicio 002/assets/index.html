@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de pessoas</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <section class="secao-cadastro">
+        <form action="/" method="POST" id="form-cadastro">
+            <label for="nome">Nome:</label>
+            <input type="text" class="input-form" id="nome" name="nome">
+
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" class="input-form" id="sobrenome" name="sobrenome">
+
+            <label for="email">E-mail:</label>
+            <input type="email" class="input-form" id="email" name="email">
+
+            <button>Enviar</button>
+        </form>
+    </section>
+    
+    <section class="secao-usuarios-cadastrados">
+        <div class="container-usuarios">
+            
+        </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
