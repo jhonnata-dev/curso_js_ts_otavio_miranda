@@ -1,4 +1,5 @@
 const form = document.querySelector('#form-cadastro');
+const usuariosCadastrados = [];
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -11,7 +12,11 @@ form.addEventListener('submit', function (event) {
     const sobrenome = inputSobrenome.value;
     const email = inputEmail.value;
 
-    criaObjeto(nome, sobrenome, email);
+    if ((nome === '') || (sobrenome === '') || (email === '')) {
+        exibeMsgErro('Preencha todos os campos');
+    } else {
+        criaObjeto(nome, sobrenome, email);
+    }
 })
 
 function criaObjeto(nome, sobrenome, email) {
@@ -21,7 +26,24 @@ function criaObjeto(nome, sobrenome, email) {
         email: email
     };
 
-    adicionaUsuario(usuario);
+    const usuarioExiste = usuariosCadastrados.some(usuario => usuario.nome === nome);
+
+    if (!usuarioExiste) {
+        usuariosCadastrados.push(usuario);
+        adicionaUsuario(usuario);
+    } else {
+        exibeMsgErro('Este usuario já está cadastrado!');
+    }
+}
+
+function exibeMsgErro(msg) {
+    const div = document.querySelector('.error');
+    const p = criaP();
+    p.classList.add('mensagem-erro');
+
+    div.innerHTML = '';
+    p.innerHTML = msg;
+    div.appendChild(p);
 }
 
 function criaP() {
