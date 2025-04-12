@@ -1,3 +1,5 @@
+/* MAIS DIFERENÇAS ENTRE VAR E LET */
+
 // var sobrenome;
 // const verdadeira = true;
 
