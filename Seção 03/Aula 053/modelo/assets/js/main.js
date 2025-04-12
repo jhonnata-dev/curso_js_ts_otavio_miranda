@@ -5,9 +5,11 @@ const elementos = [
     {tag: 'section', texto: 'Frase 4'}
 ]
 
-const section = document.querySelector('.container');
+// MINHA SOLUÇÃO
+/*
+const container = document.querySelector('.container');
 const div = document.createElement('div');
-section.appendChild(div);
+container.appendChild(div);
 
 for (let i = 0; i < elementos.length; i++) {
     const tag = criaTag(elementos[i].tag);
@@ -18,4 +20,20 @@ for (let i = 0; i < elementos.length; i++) {
 function criaTag (tag) {
     const elemento = document.createElement(tag);
     return elemento;
+} */
+
+
+// SOLUÇÃO DO PROFESSOR
+const container = document.querySelector('.container');
+const div = document.createElement('div');
+
+for (let i = 0; i < elementos.length; i++) {
+    const { tag, texto } = elementos[i];
+    const tagCriada = document.createElement(tag);
+    const textoCriado = document.createTextNode(texto);
+
+    tagCriada.appendChild(textoCriado);
+    div.appendChild(tagCriada);
 }
+
+container.appendChild(div);
