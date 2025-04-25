@@ -14,13 +14,13 @@ function soma(x, y) {
         throw('x e y precisam ser números.'); // lançando o erro que aparecerá
     }                                          // caso os númeroos sejam diferentes de number  
 
-    return x + y
+    return x + y;
 }
 
 try {
     console.log(soma(2));
     console.log(soma('1', 2));
 } catch(err) {
-    console.log(err) //  bão é recomendado exibir o erro da raiz pro usuario
-    console.log('Alguma coisa mais amigavel para o usuário')
+    console.log(err); //  bão é recomendado exibir o erro da raiz pro usuario
+    console.log('Alguma coisa mais amigavel para o usuário');
 }
